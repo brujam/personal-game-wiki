@@ -11,7 +11,7 @@ function dump_db() {
   console.log("Begin dump; \n---\n");
     
   var dump = "";
-  dump = dump + "<div id='dump'>";
+  dump = dump + '<div id="dump">';
   window.db.find({}, function(err, doc) {
     doc.forEach(function(document) {
         console.log("db.insert(" + JSON.stringify(document) + ");");
@@ -19,6 +19,7 @@ function dump_db() {
         dump = dump + "db.insert(" + JSON.stringify(document) + "); <br/>";
     })
   });
+  dump = dump + "</div>";
     
   $("#dump").replaceWith(dump);
   window.setTimeout(function () {console.log("\n---\nEnd dump;");}, 1000);
