@@ -3,11 +3,9 @@ function add_to_db () {
 }
 
 function dump_db () {
-  var db_string = "";
-  window.db.find({}, function (err, doc) {
-    doc.foreach(function (document) {
-      console.log(JSON.stringify(document);
-      $("#dump").append(JSON.stringify(document));
+  window.db.find({}, function(err, doc) {
+    doc.forEach(function(document) {
+        console.log("db.insert(" + JSON.stringify(document) + ")")
     })
   });
 }
