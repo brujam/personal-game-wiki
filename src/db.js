@@ -1,0 +1,1 @@
+window.db = new Nedb();
