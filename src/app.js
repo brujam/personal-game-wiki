@@ -8,21 +8,16 @@ function add_to_db() {
 }
 
 function dump_db() {
-  console.log("Begin dump; \n---\n");
-    
-  var dump = "";
-  dump = dump + '<div id="dump">';
+  window.dump = "";
   window.db.find({}, function(err, doc) {
     doc.forEach(function(document) {
-        console.log("db.insert(" + JSON.stringify(document) + ");");
-        
-        dump = dump + "db.insert(" + JSON.stringify(document) + "); <br/>";
+      var string = "db.insert(" + JSON.stringify(document) + "); <br/>";
+      window.dump = window.dump + string;
     })
   });
-  dump = dump + "</div>";
-    
-  $("#dump").replaceWith(dump);
-  window.setTimeout(function () {console.log("\n---\nEnd dump;");}, 1000);
+  window.setTimeout(function() {
+    $("#dump").replaceWith("<div id=\"dump\">" + window.dump + "</div>")
+  }, 1000);
 }
 
 $("#dump_js_button").click(dump_db);
