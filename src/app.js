@@ -4,7 +4,7 @@ function add_to_db() {
         desc: $("#field2").val()
     });
     
-    $("end_of_table").before("<tr><td>" + $("#field1").val() + "</td><td>" + $("#field2").val() + "</td></tr>");
+    $("#end_of_table").before("<tr><td>" + $("#field1").val() + "</td><td>" + $("#field2").val() + "</td></tr>");
 }
 
 function dump_db() {
