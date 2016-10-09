@@ -9,7 +9,7 @@ function dump_db () {
         console.log("db.insert(" + JSON.stringify(document) + ")")
     })
   });
-  console.log("\n---\nEnd dump;");
+  window.setTimeout(function () {console.log("\n---\nEnd dump;");}, 1000);
 }
 
 $("#dump_js_button").click(dump_db);
