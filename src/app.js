@@ -1,5 +1,5 @@
 function add_to_db () {
-  window.db.add(name: document.field1.value, desc: document.field2.value);
+  window.db.add({name: document.field1.value, desc: document.field2.value});
 }
 
 function dump_db () {
