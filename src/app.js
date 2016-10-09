@@ -1,8 +1,11 @@
-function add_to_db () {
-  window.db.add({name: document.field1.value, desc: document.field2.value});
+function add_to_db() {
+    window.db.insert({
+        name: $("#field1").val(),
+        desc: $("#field2").val()
+    });
 }
 
-function dump_db () {
+function dump_db() {
   console.log("Begin dump; \n---\n");
   window.db.find({}, function(err, doc) {
     doc.forEach(function(document) {
