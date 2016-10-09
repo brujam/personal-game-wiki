@@ -11,3 +11,5 @@ function dump_db () {
   });
   console.log("\n---\nEnd dump;");
 }
+
+$("#dump_js_button").click(dump_db);
