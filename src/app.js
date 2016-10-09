@@ -3,6 +3,8 @@ function add_to_db() {
         name: $("#field1").val(),
         desc: $("#field2").val()
     });
+    
+    $("end_of_table").before("<tr><td>" + $("#field1").val() + "</td><td>" + $("#field2").val() + "</td></tr>");
 }
 
 function dump_db() {
